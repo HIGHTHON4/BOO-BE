@@ -1,6 +1,6 @@
 package com.example.debatematch.domain.user.presentation
 
-import com.example.debatematch.domain.user.presentation.dto.UserLoginRequest
+import com.example.domain.user.presentation.dto.UserLoginRequest
 import com.example.domain.user.presentation.dto.UserSignUpRequest
 import com.example.debatematch.domain.user.service.UserLoginService
 import com.example.debatematch.domain.user.service.UserResignService

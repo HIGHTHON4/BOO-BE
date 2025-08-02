@@ -1,7 +1,7 @@
 package com.example.domain.devicetoken
 
+import com.example.domain.device.enum.OS
 import com.example.domain.user.User
-import com.example.domain.user.enum.OS
 import com.example.global.base.BaseEntity
 import jakarta.persistence.Entity
 import jakarta.persistence.EnumType

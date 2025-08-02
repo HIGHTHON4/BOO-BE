@@ -1,7 +1,7 @@
 package com.example.domain.devicetoken.persistance
 
+import com.example.domain.device.enum.OS
 import com.example.domain.devicetoken.DeviceToken
-import com.example.domain.user.enum.OS
 import org.springframework.data.jpa.repository.JpaRepository
 import java.util.UUID
 

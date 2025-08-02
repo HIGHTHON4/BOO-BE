@@ -1,6 +1,7 @@
-package com.example.debatematch.domain.user.presentation.dto
+package com.example.domain.user.presentation.dto
 
-import com.example.domain.user.enum.OS
+import com.example.domain.device.enum.OS
+
 
 data class UserLoginRequest(
     val accountId: String,

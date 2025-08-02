@@ -3,7 +3,7 @@ package com.example.debatematch.domain.user.service
 import com.example.debatematch.domain.user.exception.PasswordMissMatch
 import com.example.debatematch.domain.user.exception.UserNotFoundException
 import com.example.debatematch.domain.user.persistence.UserRepository
-import com.example.debatematch.domain.user.presentation.dto.UserLoginRequest
+import com.example.domain.user.presentation.dto.UserLoginRequest
 import com.example.domain.devicetoken.DeviceToken
 import com.example.domain.devicetoken.exception.DeviceTokenNotFound
 import com.example.domain.devicetoken.persistance.DeviceTokenRepository

@@ -5,7 +5,7 @@ import com.example.domain.ai.presentation.dto.req.GeminiPart
 import com.example.domain.ai.presentation.dto.req.GeminiRequest
 import com.example.domain.ai.properties.GeminiProperties
 import com.example.domain.chat.Chat
-import com.example.domain.chat.Prompt
+import com.example.domain.chat.prompt.Prompt
 import com.example.domain.chat.enum.Sender
 import com.example.domain.chat.exception.ReportNotFoundException
 import com.example.domain.chat.persistance.ChatRepository
@@ -14,7 +14,6 @@ import com.example.domain.chat.presentation.dto.req.ChatRequest
 import com.example.domain.chat.presentation.dto.res.ChatResponse
 import com.example.domain.report.persistance.ReportRepository
 import com.example.infra.feign.gemini.GeminiClient
-import kotlinx.serialization.json.Json
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 

@@ -11,5 +11,6 @@ class AI(
     val name: String,
     val description: String,
     @Column(length = 1000)
-    val prompt: String
+    val prompt: String,
+    val image: String? = null,
 ) : BaseEntity()

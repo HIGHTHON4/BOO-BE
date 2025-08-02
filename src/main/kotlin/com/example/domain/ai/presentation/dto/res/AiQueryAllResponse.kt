@@ -5,5 +5,6 @@ import java.util.UUID
 data class AiQueryAllResponse(
     val name: String,
     val description: String,
-    val id: UUID
+    val id: UUID,
+    val image: String,
 )

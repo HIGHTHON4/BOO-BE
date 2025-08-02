@@ -1,10 +1,13 @@
 package com.example.domain.report.presentation.dto.res
 
-import com.example.domain.report.enum.FearLevel
 import java.time.LocalDate
+import com.fasterxml.jackson.annotation.JsonFormat
+import java.util.UUID
 
 data class QueryAllMyReportResponse(
-    val level: FearLevel,
+    val level: Comparable<*>,
+    @JsonFormat(pattern = "yyyy.MM.dd")
     val date: LocalDate,
-    val title: String
+    val title: String,
+    val reportId: UUID
 )

@@ -13,6 +13,7 @@ import com.example.domain.chat.presentation.dto.req.StopChatRequest
 import com.example.domain.chat.prompt.MakeHorrorStoryPrompt
 import com.example.domain.chat.prompt.MakeReportPrompt
 import com.example.domain.report.enum.FearLevel
+import com.example.domain.report.enum.Status
 import com.example.domain.report.persistance.ReportRepository
 import com.example.infra.feign.gemini.GeminiClient
 import kotlinx.serialization.json.Json
@@ -53,6 +54,7 @@ class StopChatService(
         report.title = summary.title
         report.fearLevel = FearLevel.F.getFearLevel(summary.fearLevel)
         report.content = summary.summary
+        report.status = Status.DONE
 
         val horrorStory = geminiClient.generateContent(
             apiKey = geminiProperties.apiKey,

@@ -56,6 +56,7 @@ dependencies {
     implementation("org.glassfish.jaxb:jaxb-runtime:2.3.1")
     implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
+    implementation("com.github.jsqlparser:jsqlparser:4.9")
 }
 
 kotlin {

@@ -19,13 +19,22 @@ class QueryAllMyReportService(
         val user = userFacade.currentUser()
 
         return reportRepository.findAllByUserId(userId = user.id!!)
-            .filter { it.ai.id != null && it.ai.id in ai }
-            .sortedBy {
+            .filter {  ai.contains(it.ai.id) }
+            .sortedWith(
                 when (sort) {
-                    Sort.TIME -> it.createdAt
-                    Sort.LEVEL -> it.fearLevel ?: 0
-                } as Nothing
-            }.map { QueryAllMyReportResponse(level = it.fearLevel!!, date = it.createdAt!!.toLocalDate(), title = it.title!! ) }
+                    Sort.TIME -> compareBy { it.createdAt }
+                    Sort.LEVEL -> compareByDescending { it.fearLevel ?: 0 }
+                    Sort.LAST -> compareBy{it.fearLevel ?: 0}
+                }
+            )
+            .map {
+                QueryAllMyReportResponse(
+                    level = it.fearLevel ?: 0,
+                    date = it.createdAt?.toLocalDate() ?: LocalDate.now(),
+                    title = it.title.orEmpty(),
+                    reportId = it.id!!
+                )
+            }
     }
 
 }

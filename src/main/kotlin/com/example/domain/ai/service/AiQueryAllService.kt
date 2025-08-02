@@ -9,6 +9,6 @@ class AiQueryAllService(
     private val aiRepository: AiRepository
 ) {
     fun execute(): List<AiQueryAllResponse> {
-        return aiRepository.findAll().map { AiQueryAllResponse(name = it.name, description = it.description, id = it.id!!) }
+        return aiRepository.findAll().map { AiQueryAllResponse(name = it.name, description = it.description, id = it.id!!, image = it.image!!) }
     }
 }

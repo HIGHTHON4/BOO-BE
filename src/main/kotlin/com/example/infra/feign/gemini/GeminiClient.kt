@@ -15,4 +15,10 @@ interface GeminiClient {
         @RequestParam("key") apiKey: String,
         @RequestBody request: GeminiRequest
     ): GeminiResponse
+
+    @PostMapping("/models/gemini-2.5-flash:generateContent")
+    fun generateReport(
+        @RequestParam("key") apiKey: String,
+        @RequestBody request: GeminiRequest
+    ): String
 }

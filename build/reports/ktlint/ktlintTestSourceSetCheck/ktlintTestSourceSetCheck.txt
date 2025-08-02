@@ -1,0 +1,4 @@
+[90m/Users/byeondohwi/Documents/Repository/BOO-BE/src/test/kotlin/example/com/[0mDemoApplicationTests.kt[90m:[0m9[90m:1:[0m Unexpected tab character(s) [90m(indent)[0m
+[90m/Users/byeondohwi/Documents/Repository/BOO-BE/src/test/kotlin/example/com/[0mDemoApplicationTests.kt[90m:[0m10[90m:1:[0m Unexpected tab character(s) [90m(indent)[0m
+[90m/Users/byeondohwi/Documents/Repository/BOO-BE/src/test/kotlin/example/com/[0mDemoApplicationTests.kt[90m:[0m11[90m:1:[0m Unexpected tab character(s) [90m(indent)[0m
+[90m/Users/byeondohwi/Documents/Repository/BOO-BE/src/test/kotlin/example/com/[0mDemoApplicationTests.kt[90m:[0m12[90m:1:[0m Unexpected blank line(s) before "}" [90m(no-blank-line-before-rbrace)[0m

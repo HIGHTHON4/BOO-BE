@@ -41,6 +41,7 @@ enum class ErrorCode(
     SseEmitterAlreadyCompletedException(400,""),
     REPORT_NOT_FOUND(404, "Report Not Found"),
     AI_NOT_FOUND(404, "AI Not Found"),
+    DEVICE_TOKEN_NOT_FOUND(404, "Device Token Not Found"),
 
     NOT_ADMIN(403, "Not an Admin"),
     NOT_STUDENT(403, "Not an Student"),

@@ -12,7 +12,7 @@ import jakarta.persistence.Table
 @Entity
 @Table(name = "tbl_device_token")
 class DeviceToken(
-    val device_token: String,
+    var device_token: String,
     @ManyToOne
     val user: User,
     @Enumerated(EnumType.STRING)

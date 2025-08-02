@@ -12,7 +12,7 @@ class QueryAllTodayHorrorService(
     private val userFacade: UserFacade
 ) {
     @Transactional(readOnly = true)
-    fun execute():List<QueryAllTodayHorrorResponse>{
+    fun execute(): List<QueryAllTodayHorrorResponse> {
         val user = userFacade.currentUser()
 
         return todayHorrorRepository.findAllByUserId(user.id!!).map { QueryAllTodayHorrorResponse(title = it.report.title!!, reportId = it.report.id!!) }

@@ -19,5 +19,4 @@ class TodayHorrorController(
 
     @GetMapping("/query")
     fun query(@RequestParam reportId: UUID) = queryHorrorService.execute(reportId)
-
 }

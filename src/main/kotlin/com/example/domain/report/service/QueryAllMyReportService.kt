@@ -16,17 +16,17 @@ class QueryAllMyReportService(
     private val userFacade: UserFacade
 ) {
     @Transactional(readOnly = true)
-    fun execute(sort: Sort, ai: List<UUID>): List<QueryAllMyReportResponse>{
+    fun execute(sort: Sort, ai: List<UUID>): List<QueryAllMyReportResponse> {
         val user = userFacade.currentUser()
 
         return reportRepository.findAllByUserId(userId = user.id!!)
-            .filter {  ai.contains(it.ai.id) }
+            .filter { ai.contains(it.ai.id) }
             .filter { it.status == Status.DONE }
             .sortedWith(
                 when (sort) {
                     Sort.TIME -> compareBy { it.createdAt }
                     Sort.LEVEL -> compareByDescending { it.fearLevel ?: 0 }
-                    Sort.LAST -> compareBy{it.fearLevel ?: 0}
+                    Sort.LAST -> compareBy { it.fearLevel ?: 0 }
                 }
             )
             .map {
@@ -38,5 +38,4 @@ class QueryAllMyReportService(
                 )
             }
     }
-
 }

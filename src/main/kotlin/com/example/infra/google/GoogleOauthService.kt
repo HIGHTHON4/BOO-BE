@@ -11,7 +11,7 @@ class GoogleOauthService(
     private val redisUtil: RedisUtil,
     @Value("\${firebase.messaging.url.key}") private val key: URL,
     @Value("\${firebase.messaging.url.credentials}") private val credentials: String
-)  {
+) {
     companion object {
         private const val REDIS_KEY = "fcm:access-token"
     }

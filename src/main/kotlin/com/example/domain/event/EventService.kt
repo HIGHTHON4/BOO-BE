@@ -27,7 +27,7 @@ class EventService(
     @EventListener(StopChatRequest::class)
     @Transactional
     fun event(request: StopChatRequest) {
-        var report = reportRepository.findById(request.reportId).orElseThrow{ReportNotFoundException}
+        var report = reportRepository.findById(request.reportId).orElseThrow { ReportNotFoundException }
         val chats = chatRepository.findAllByReportId(reportId = request.reportId)
         val horrorStory = geminiClient.generateContent(
             apiKey = geminiProperties.apiKey,
@@ -46,5 +46,4 @@ class EventService(
 
         report.horrorStory = text
     }
-
 }

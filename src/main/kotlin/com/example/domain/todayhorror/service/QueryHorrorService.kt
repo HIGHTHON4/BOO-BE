@@ -9,12 +9,11 @@ import java.util.UUID
 
 @Service
 class QueryHorrorService(
-    private val reportRepository: ReportRepository,
+    private val reportRepository: ReportRepository
 ) {
     @Transactional(readOnly = true)
     fun execute(reportId: UUID): QueryHorrorResponse {
-        val report = reportRepository.findById(reportId).orElseThrow{ReportNotFoundException}
+        val report = reportRepository.findById(reportId).orElseThrow { ReportNotFoundException }
         return QueryHorrorResponse(text = report.horrorStory!!, content = report.content!!, title = report.title!!)
-
     }
 }

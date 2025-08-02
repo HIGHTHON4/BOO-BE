@@ -9,11 +9,11 @@ import java.util.UUID
 
 @Service
 class QueryReportService(
-    private val reportRepository: ReportRepository,
+    private val reportRepository: ReportRepository
 ) {
     @Transactional(readOnly = true)
-    fun execute(reportId: UUID): GeminiResultDetail2{
-        val report = reportRepository.findById(reportId).orElseThrow{ReportNotFoundException}
+    fun execute(reportId: UUID): GeminiResultDetail2 {
+        val report = reportRepository.findById(reportId).orElseThrow { ReportNotFoundException }
         return GeminiResultDetail2(summary = report.content!!, title = report.title!!, fearLevel = report.fearLevel!!)
     }
 }

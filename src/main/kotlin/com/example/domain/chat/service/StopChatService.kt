@@ -10,7 +10,6 @@ import com.example.domain.chat.exception.ReportNotFoundException
 import com.example.domain.chat.persistance.ChatRepository
 import com.example.domain.chat.presentation.dto.req.ChatBotRequest
 import com.example.domain.chat.presentation.dto.req.StopChatRequest
-import com.example.domain.chat.prompt.MakeHorrorStoryPrompt
 import com.example.domain.chat.prompt.MakeReportPrompt
 import com.example.domain.report.enum.FearLevel
 import com.example.domain.report.enum.Status
@@ -31,7 +30,7 @@ class StopChatService(
     private val eventPublisher: ApplicationEventPublisher
 ) {
     @Transactional
-    fun execute(request: StopChatRequest):GeminiResultDetail2 {
+    fun execute(request: StopChatRequest): GeminiResultDetail2 {
         val report = reportRepository.findById(request.reportId).orElseThrow { ReportNotFoundException }
         val chats = chatRepository.findAllByReportId(report.id!!)
         val ai = report.ai

@@ -13,8 +13,6 @@ class TodayHorror(
     @ManyToOne
     val user: User,
     @ManyToOne
-    val report: Report,
+    val report: Report
 
-    ): BaseEntity() {
-
-}
+) : BaseEntity()

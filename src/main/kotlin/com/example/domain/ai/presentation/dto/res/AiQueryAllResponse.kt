@@ -6,5 +6,5 @@ data class AiQueryAllResponse(
     val name: String,
     val description: String,
     val id: UUID,
-    val image: String,
+    val image: String
 )

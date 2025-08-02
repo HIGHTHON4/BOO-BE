@@ -9,9 +9,9 @@ import org.springframework.stereotype.Service
 class FcmService(
     private val fcmClient: FcmClient,
     private val googleOauthService: GoogleOauthService
-)  {
+) {
 
-     fun execute(deviceTokens: List<String>, title: String, body: String) {
+    fun execute(deviceTokens: List<String>, title: String, body: String) {
         val token = googleOauthService.getToken()
         deviceTokens.filter { it.isNotBlank() }
             .forEach {

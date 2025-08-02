@@ -18,7 +18,7 @@ class ScheduleService(
     private val deviceTokenRepository: DeviceTokenRepository,
     private val fcmService: FcmService
 
-    ) {
+) {
 
     @Scheduled(cron = "0 * * * * ?", zone = "Asia/Seoul")
     @Transactional
@@ -32,7 +32,7 @@ class ScheduleService(
                 todayHorrorRepository.save(TodayHorror(user = user, report = report))
             }
 
-            //fcmService.execute(deviceTokenRepository.findAllByUserId(user.id!!).map { it.deviceToken },"4시 44분..👻","볼 수 있는 괴담이 초기화되었다네")
+            // fcmService.execute(deviceTokenRepository.findAllByUserId(user.id!!).map { it.deviceToken },"4시 44분..👻","볼 수 있는 괴담이 초기화되었다네")
         }
     }
 }

@@ -15,10 +15,12 @@ import jakarta.persistence.Table
 @Entity
 @Table(name = "tbl_report")
 class Report(
-    val title: String? = null,
-    @Column(length = 500)
-    val content: String? = null,//내용 + 등급 설명
-    val fearLevel: FearLevel? = null,
+    var title: String? = null,
+    @Column(length = 2000)
+    var content: String? = null,//내용 + 등급 설명
+    var fearLevel: FearLevel? = null,
+    @Column(length = 2000)
+    var horrorStory: String? = null,
 
 
     @OneToOne(fetch = FetchType.EAGER)

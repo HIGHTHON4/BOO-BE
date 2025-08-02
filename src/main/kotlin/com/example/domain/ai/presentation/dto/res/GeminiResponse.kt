@@ -1,5 +1,7 @@
 package com.example.domain.ai.presentation.dto.res
 
+import kotlinx.serialization.Serializable
+
 data class GeminiResponse(
     val candidates: List<Candidate>,
     val usageMetadata: UsageMetadata,
@@ -33,4 +35,11 @@ data class UsageMetadata(
 data class PromptTokensDetail(
     val modality: String,
     val tokenCount: Int
+)
+
+@Serializable
+data class GeminiResultDetail(
+    val summary: String,
+    val fearLevel: Int,
+    val title: String
 )

@@ -1,5 +1,6 @@
 package com.example.domain.ai.presentation.dto.res
 
+import com.example.domain.report.enum.FearLevel
 import kotlinx.serialization.Serializable
 
 data class GeminiResponse(
@@ -41,5 +42,11 @@ data class PromptTokensDetail(
 data class GeminiResultDetail(
     val summary: String,
     val fearLevel: Int,
+    val title: String
+)
+
+data class GeminiResultDetail2(
+    val summary: String,
+    val fearLevel: FearLevel,
     val title: String
 )

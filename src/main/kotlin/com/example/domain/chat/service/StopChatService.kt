@@ -4,6 +4,7 @@ import com.example.domain.ai.presentation.dto.req.GeminiContent
 import com.example.domain.ai.presentation.dto.req.GeminiPart
 import com.example.domain.ai.presentation.dto.req.GeminiRequest
 import com.example.domain.ai.presentation.dto.res.GeminiResultDetail
+import com.example.domain.ai.presentation.dto.res.GeminiResultDetail2
 import com.example.domain.ai.properties.GeminiProperties
 import com.example.domain.chat.exception.ReportNotFoundException
 import com.example.domain.chat.persistance.ChatRepository
@@ -29,7 +30,7 @@ class StopChatService(
 
 ) {
     @Transactional
-    fun execute(request: StopChatRequest) {
+    fun execute(request: StopChatRequest):GeminiResultDetail2 {
         val report = reportRepository.findById(request.reportId).orElseThrow { ReportNotFoundException }
         val chats = chatRepository.findAllByReportId(report.id!!)
         val ai = report.ai
@@ -69,5 +70,7 @@ class StopChatService(
         val text = horrorStory.candidates[0].content.parts[0].text
 
         report.horrorStory = text
+
+        return GeminiResultDetail2(summary = summary.summary, fearLevel = report.fearLevel!!, title = summary.title)
     }
 }

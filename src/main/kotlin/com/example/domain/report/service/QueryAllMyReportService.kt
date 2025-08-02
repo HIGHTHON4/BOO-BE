@@ -2,6 +2,7 @@ package com.example.domain.report.service
 
 import com.example.debatematch.domain.user.facade.UserFacade
 import com.example.domain.report.enum.Sort
+import com.example.domain.report.enum.Status
 import com.example.domain.report.persistance.ReportRepository
 import com.example.domain.report.presentation.dto.res.QueryAllMyReportResponse
 import org.springframework.stereotype.Service
@@ -20,6 +21,7 @@ class QueryAllMyReportService(
 
         return reportRepository.findAllByUserId(userId = user.id!!)
             .filter {  ai.contains(it.ai.id) }
+            .filter { it.status == Status.DONE }
             .sortedWith(
                 when (sort) {
                     Sort.TIME -> compareBy { it.createdAt }

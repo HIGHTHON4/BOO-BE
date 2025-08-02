@@ -25,9 +25,9 @@ class UserLoginService(
         val user = userRepository.findByAccountId(request.accountId) ?: throw UserNotFoundException
         if (deviceTokenRepository.existsByUserIdAndOs(user.id!!, request.os)) {
             var deviceToken = deviceTokenRepository.findByUserIdAndOs(user.id!!, request.os) ?: throw DeviceTokenNotFound
-            deviceToken.device_token = request.deviceToken
+            deviceToken.deviceToken = request.deviceToken
         } else {
-            deviceTokenRepository.save(DeviceToken(device_token = request.deviceToken, user = user, os = request.os))
+            deviceTokenRepository.save(DeviceToken(deviceToken = request.deviceToken, user = user, os = request.os))
         }
 
         if (!passwordEncoder.matches(request.password, user.password)) {

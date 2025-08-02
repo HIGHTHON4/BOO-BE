@@ -30,7 +30,7 @@ class UserSignUpService(
             )
         )
 
-        deviceTokenRepository.save(DeviceToken(device_token = request.deviceToken, user = user, os = request.os))
+        deviceTokenRepository.save(DeviceToken(deviceToken = request.deviceToken, user = user, os = request.os))
 
         return user.id
     }

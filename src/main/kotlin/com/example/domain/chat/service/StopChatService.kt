@@ -17,6 +17,7 @@ import com.example.domain.report.enum.Status
 import com.example.domain.report.persistance.ReportRepository
 import com.example.infra.feign.gemini.GeminiClient
 import kotlinx.serialization.json.Json
+import org.springframework.context.ApplicationEventPublisher
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
@@ -27,8 +28,7 @@ class StopChatService(
     private val geminiClient: GeminiClient,
     private val geminiProperties: GeminiProperties,
     private val makeReportPrompt: MakeReportPrompt,
-    private val makeHorrorStoryPrompt: MakeHorrorStoryPrompt
-
+    private val eventPublisher: ApplicationEventPublisher
 ) {
     @Transactional
     fun execute(request: StopChatRequest):GeminiResultDetail2 {
@@ -56,22 +56,7 @@ class StopChatService(
         report.content = summary.summary
         report.status = Status.DONE
 
-        val horrorStory = geminiClient.generateContent(
-            apiKey = geminiProperties.apiKey,
-            request = GeminiRequest(
-                contents = listOf(
-                    GeminiContent(
-                        parts = listOf(
-                            GeminiPart(text = makeHorrorStoryPrompt.prompt + chats.map { ChatBotRequest(content = it.content, sender = it.sender) })
-                        )
-                    )
-                )
-            )
-        )
-
-        val text = horrorStory.candidates[0].content.parts[0].text
-
-        report.horrorStory = text
+        eventPublisher.publishEvent(StopChatRequest(report.id!!))
 
         return GeminiResultDetail2(summary = summary.summary, fearLevel = report.fearLevel!!, title = summary.title)
     }

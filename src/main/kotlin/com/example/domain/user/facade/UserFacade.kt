@@ -1,14 +1,14 @@
 package com.example.debatematch.domain.user.facade
 
-import com.example.domain.user.User
 import com.example.debatematch.domain.user.exception.UserNotFoundException
 import com.example.debatematch.domain.user.persistence.UserRepository
+import com.example.domain.user.User
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.stereotype.Component
 
 @Component
 class UserFacade(
-    private val userRepository: UserRepository,
+    private val userRepository: UserRepository
 ) {
     fun currentUser(): User {
         val accountId = SecurityContextHolder.getContext().authentication.name

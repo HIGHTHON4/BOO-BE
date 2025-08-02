@@ -1,6 +1,5 @@
 package com.example.global.error
 
-import com.example.global.error.ErrorResponse
 import com.example.global.error.exception.CustomException
 import com.fasterxml.jackson.databind.ObjectMapper
 import jakarta.servlet.FilterChain

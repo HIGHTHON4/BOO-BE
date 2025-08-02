@@ -1,7 +1,6 @@
 package com.example.global.error
 
 import com.example.debatematch.domain.user.presentation.UserController
-import com.example.global.error.ErrorResponse
 import com.example.global.error.exception.CustomException
 import jakarta.servlet.http.HttpServletResponse
 import org.springframework.http.HttpStatus

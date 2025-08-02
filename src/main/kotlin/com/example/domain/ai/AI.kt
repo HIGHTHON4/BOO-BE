@@ -12,5 +12,4 @@ class AI(
     val description: String,
     @Column(length = 1000)
     val prompt: String
-):BaseEntity() {
-}
+) : BaseEntity()

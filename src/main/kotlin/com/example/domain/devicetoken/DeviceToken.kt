@@ -17,5 +17,4 @@ class DeviceToken(
     val user: User,
     @Enumerated(EnumType.STRING)
     val os: OS
-): BaseEntity() {
-}
+) : BaseEntity()

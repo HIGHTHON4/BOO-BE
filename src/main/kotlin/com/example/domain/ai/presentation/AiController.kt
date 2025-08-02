@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 @RequestMapping("/ai")
 class AiController(
-    private val aiQueryAllService: AiQueryAllService,
+    private val aiQueryAllService: AiQueryAllService
 ) {
     @GetMapping
     fun getAllAi() = aiQueryAllService.execute()

@@ -13,5 +13,5 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing
 class DemoApplication
 
 fun main(args: Array<String>) {
-	runApplication<DemoApplication>(*args)
+    runApplication<DemoApplication>(*args)
 }

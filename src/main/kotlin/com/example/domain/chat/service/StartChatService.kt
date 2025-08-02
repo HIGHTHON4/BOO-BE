@@ -14,12 +14,12 @@ import java.util.*
 class StartChatService(
     private val userFacade: UserFacade,
     private val reportRepository: ReportRepository,
-    private val aiRepository: AiRepository,
+    private val aiRepository: AiRepository
 ) {
     @Transactional
     fun execute(request: StartChatRequest): UUID {
         val user = userFacade.currentUser()
-        val ai = aiRepository.findById(request.aiId).orElseThrow{AINotFoundException}
+        val ai = aiRepository.findById(request.aiId).orElseThrow { AINotFoundException }
 
         return reportRepository.save(Report(user = user, ai = ai)).id!!
     }

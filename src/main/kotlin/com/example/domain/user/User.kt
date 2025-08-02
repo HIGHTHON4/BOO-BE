@@ -13,6 +13,6 @@ class User(
     @Column(nullable = false)
     val accountId: String,
     @Column(nullable = false)
-    val password: String,
+    val password: String
 
 ) : BaseEntity()

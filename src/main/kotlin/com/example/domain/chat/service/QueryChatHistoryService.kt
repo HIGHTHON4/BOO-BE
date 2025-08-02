@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional
 
 @Service
 class QueryChatHistoryService(
-    private val chatRepository: ChatRepository,
+    private val chatRepository: ChatRepository
 
 ) {
     @Transactional(readOnly = true)

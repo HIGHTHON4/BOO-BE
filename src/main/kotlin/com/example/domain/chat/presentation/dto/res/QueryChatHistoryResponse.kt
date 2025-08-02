@@ -4,5 +4,5 @@ import com.example.domain.chat.enum.Sender
 
 data class QueryChatHistoryResponse(
     val sender: Sender,
-    val content: String,
+    val content: String
 )

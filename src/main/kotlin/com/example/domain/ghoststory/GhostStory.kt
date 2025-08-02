@@ -15,6 +15,5 @@ class GhostStory(
     val content: String,
 
     @ManyToOne
-    val report: Report,
-): BaseEntity() {
-}
+    val report: Report
+) : BaseEntity()

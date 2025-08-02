@@ -38,7 +38,7 @@ enum class ErrorCode(
     FLOOR_NOT_FOUND(404, "Floor Not Found"),
     TEACHER_NOT_FOUND(404, "Teacher Not Found"),
     TIMETABLE_NOT_FOUND(404, "Timetable Not Found"),
-    SseEmitterAlreadyCompletedException(400,""),
+    SseEmitterAlreadyCompletedException(400, ""),
     REPORT_NOT_FOUND(404, "Report Not Found"),
     AI_NOT_FOUND(404, "AI Not Found"),
     DEVICE_TOKEN_NOT_FOUND(404, "Device Token Not Found"),

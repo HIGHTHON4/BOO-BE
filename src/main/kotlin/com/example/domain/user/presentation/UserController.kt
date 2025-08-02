@@ -1,10 +1,10 @@
 package com.example.debatematch.domain.user.presentation
 
-import com.example.domain.user.presentation.dto.UserLoginRequest
-import com.example.domain.user.presentation.dto.UserSignUpRequest
 import com.example.debatematch.domain.user.service.UserLoginService
 import com.example.debatematch.domain.user.service.UserResignService
 import com.example.debatematch.domain.user.service.UserSignUpService
+import com.example.domain.user.presentation.dto.UserLoginRequest
+import com.example.domain.user.presentation.dto.UserSignUpRequest
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
@@ -17,7 +17,7 @@ import java.util.*
 class UserController(
     private val userSignUpService: UserSignUpService,
     private val userResignService: UserResignService,
-    private val userLoginService: UserLoginService,
+    private val userLoginService: UserLoginService
 
 ) {
     @PostMapping("/signup")
@@ -36,6 +36,4 @@ class UserController(
     fun login(
         @RequestBody request: UserLoginRequest
     ) = userLoginService.execute(request)
-
-
 }

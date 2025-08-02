@@ -3,7 +3,7 @@ package com.example.domain.chat.prompt
 import org.springframework.stereotype.Component
 
 @Component
-class Prompt (
+class Prompt(
     val prompt: String = """        
         assistant는 위와 같은 성격을 가진 상담사입니다 곧 나올 대화 내역을 보고 위에 성격에 맞춰 대답해야합니다.
         대화의 마지막 내용에 대한 답을 해야합니다. 앞선 대화 내용은 문맥을 파악을 위해 사용하십시오.

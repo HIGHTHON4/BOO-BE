@@ -20,6 +20,4 @@ class Chat(
     val sender: Sender,
     @ManyToOne(fetch = FetchType.EAGER)
     val report: Report
-): BaseEntity() {
-
-}
+) : BaseEntity()

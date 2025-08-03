@@ -59,6 +59,8 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
     implementation("com.github.jsqlparser:jsqlparser:4.9")
     implementation("com.google.auth:google-auth-library-oauth2-http:1.17.0")
+    implementation("com.google.firebase:firebase-admin:9.2.0")
+
 }
 
 kotlin {

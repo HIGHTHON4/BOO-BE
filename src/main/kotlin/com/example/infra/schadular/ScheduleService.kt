@@ -20,7 +20,7 @@ class ScheduleService(
 
 ) {
 
-    @Scheduled(cron = "0 * * * * ?", zone = "Asia/Seoul")
+    @Scheduled(cron = "44 * * * * ?", zone = "Asia/Seoul")
     @Transactional
     fun todayHorror() {
         todayHorrorRepository.deleteAll()
@@ -32,7 +32,7 @@ class ScheduleService(
                 todayHorrorRepository.save(TodayHorror(user = user, report = report))
             }
 
-            // fcmService.execute(deviceTokenRepository.findAllByUserId(user.id!!).map { it.deviceToken },"4시 44분..👻","볼 수 있는 괴담이 초기화되었다네")
+             fcmService.execute(deviceTokenRepository.findAllByUserId(user.id!!).map { it.deviceToken },"4시 44분 44초..👻","볼 수 있는 괴담이 초기화되었다네")
         }
     }
 }

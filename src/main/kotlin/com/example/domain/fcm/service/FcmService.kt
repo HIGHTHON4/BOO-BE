@@ -20,7 +20,7 @@ class FcmService(
     }
 
     private fun sendMessage(fcmMessage: FcmMessage, token: String) {
-        fcmClient.sendMessage("Bearer " + token, fcmMessage)
+        fcmClient.sendMessage(authorization = "Bearer $token", request =  fcmMessage)
     }
 
     private fun generateMessage(

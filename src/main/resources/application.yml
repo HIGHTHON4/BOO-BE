@@ -16,6 +16,11 @@ spring:
     open-in-view: false
     database: mysql
 
+  data:
+    redis:
+      host: ${REDIS_HOST}
+      port: ${REDIS_PORT:6379}
+
 gemini:
   api-key: ${API_KEY}
 

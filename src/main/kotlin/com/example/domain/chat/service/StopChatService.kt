@@ -57,6 +57,6 @@ class StopChatService(
 
         eventPublisher.publishEvent(StopChatRequest(report.id!!))
 
-        return GeminiResultDetail2(summary = summary.summary, fearLevel = report.fearLevel!!, title = summary.title)
+        return GeminiResultDetail2(summary = summary.summary, fearLevel = report.fearLevel!!, title = summary.title, report.ai.name)
     }
 }

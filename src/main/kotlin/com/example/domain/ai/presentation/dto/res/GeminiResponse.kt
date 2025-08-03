@@ -48,5 +48,6 @@ data class GeminiResultDetail(
 data class GeminiResultDetail2(
     val summary: String,
     val fearLevel: FearLevel,
-    val title: String
+    val title: String,
+    val aiName: String
 )

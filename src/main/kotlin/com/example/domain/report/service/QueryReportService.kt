@@ -14,6 +14,6 @@ class QueryReportService(
     @Transactional(readOnly = true)
     fun execute(reportId: UUID): GeminiResultDetail2 {
         val report = reportRepository.findById(reportId).orElseThrow { ReportNotFoundException }
-        return GeminiResultDetail2(summary = report.content!!, title = report.title!!, fearLevel = report.fearLevel!!)
+        return GeminiResultDetail2(summary = report.content!!, title = report.title!!, fearLevel = report.fearLevel!!, aiName = report.ai.name)
     }
 }
